@@ -1,0 +1,874 @@
+Script started on Fri 19 Jul 2013 06:12:40 PM MYT
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# apt-get install postfix
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 1%Building dependency tree... 2%Building dependency tree... 3%Building dependency tree... 6%Building dependency tree... 26%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 51%Building dependency tree... 52%Building dependency tree... 53%Building dependency tree... 56%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+Suggested packages:
+  procmail postfix-mysql postfix-pgsql postfix-ldap postfix-pcre sasl2-bin
+  dovecot-common postfix-cdb postfix-doc
+The following NEW packages will be installed:
+  postfix
+0 upgraded, 1 newly installed, 0 to remove and 287 not upgraded.
+Need to get 1,274 kB of archives.
+After this operation, 3,187 kB of additional disk space will be used.
+0% [Working]            0% [Waiting for headers]                        Get:1 http://my.archive.ubuntu.com/ubuntu/ precise-updates/main postfix i386 2.9.6-1~12.04.1 [1,274 kB]
+                        0% [1 postfix 0 B/1,274 kB 0%]                              3% [1 postfix 42.9 kB/1,274 kB 3%]                                  11% [1 postfix 136 kB/1,274 kB 11%]20% [1 postfix 252 kB/1,274 kB 20%]40% [1 postfix 514 kB/1,274 kB 40%]71% [1 postfix 901 kB/1,274 kB 71%]                                   97% [1 postfix 1,232 kB/1,274 kB 97%]                                     100% [Working]              Fetched 1,274 kB in 3s (330 kB/s)
+Preconfiguring packages ...
+[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[3;3H[30m[47m┌────────────────────────┤ [31mPostfix Configuration[30m ├────────────────────────┐[4;3H│                                                                         │[1m[37m[40m [5;3H(B[m[30m[47m│ Please select the mail server configuration type that best meets your    [1m[37m[40m [6;3H(B[m[30m[47m│ needs.                                                                   [1m[37m[40m [7;3H(B[m[30m[47m│                                                                          [1m[37m[40m [8;3H(B[m[30m[47m│  No configuration:                                                       [1m[37m[40m [9;3H(B[m[30m[47m│   Should be chosen to leave the current configuration unchanged.         [1m[37m[40m [10;3H(B[m[30m[47m│  Internet site:                                                          [1m[37m[40m [11;3H(B[m[30m[47m│   Mail is sent and received directly using SMTP.                         [1m[37m[40m [12;3H(B[m[30m[47m│  Internet with smarthost:                                                [1m[37m[40m [13;3H(B[m[30m[47m│   Mail is received directly using SMTP or by running a utility such      [1m[37m[40m [14;3H(B[m[30m[47m│   as fetchmail. Outgoing mail is sent using a smarthost.                 [1m[37m[40m [15;3H(B[m[30m[47m│  Satellite system:                                                       [1m[37m[40m [16;3H(B[m[30m[47m│   All mail is sent to another machine, called a 'smarthost', for         [1m[37m[40m [17;3H(B[m[30m[47m│ delivery.                                                                [1m[37m[40m [18;3H(B[m[30m[47m│  Local only:                                                             [1m[37m[40m [19;3H(B[m[30m[47m│                                                                          [1m[37m[40m [20;3H(B[m[30m[47m│                                 <Ok>                                     [1m[37m[40m [21;3H(B[m[30m[47m│                                                                         │[1m[37m[40m [22;3H(B[m[30m[47m└─────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [23;4H                                                                           [5;5H(B[m[37m[40m[5;18r[5;1H[1M[1;24r[18;1H[1m[37m[45m  (B[m[30m[47m│   The only delivered mail is the mail for local users. There is no       [1m[37m[40m [45m  [5;5H(B[m[37m[40m[6;18r[6;1H[1M[1;24r[5;5H[30m[47m      [18;1H[1m[37m[45m  (B[m[30m[47m│ network.                                                                 [1m[37m[40m [45m  [5;5H[20;37H(B[m[37m[41m<Ok>[20;38H[?12l[?25h
+
+
+
+[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[6;21H[30m[47m┌──────┤ [31mPostfix Configuration[30m ├───────┐[7;21H│ General type of mail configuration:  │[1m[37m[40m [8;21H(B[m[30m[47m│                                      │[1m[37m[40m [9;21H(B[m[30m[47m│       No configuration               │[1m[37m[40m [10;21H(B[m[30m[47m│       [37m[41mInternet Site          [30m[47m        │[1m[37m[40m [11;21H(B[m[30m[47m│       Internet with smarthost        │[1m[37m[40m [12;21H(B[m[30m[47m│       Satellite system               │[1m[37m[40m [13;21H(B[m[30m[47m│       Local only                     │[1m[37m[40m [14;21H(B[m[30m[47m│                                      │[1m[37m[40m [15;21H(B[m[30m[47m│                                      │[1m[37m[40m [16;21H(B[m[30m[47m│       <Ok>           <Cancel>        │[1m[37m[40m [17;21H(B[m[30m[47m│                                      │[1m[37m[40m [18;21H(B[m[30m[47m└──────────────────────────────────────┘[1m[37m[40m [19;22H                                        [10;29H[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[3;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[4;2H│ The "mail name" is the domain name used to "qualify" _ALL_ mail           │[1m[37m[40m [5;2H(B[m[30m[47m│ addresses without a domain name. This includes mail to and from <root>:   │[1m[37m[40m [6;2H(B[m[30m[47m│ please do not make your machine send out mail from root@example.org       │[1m[37m[40m [7;2H(B[m[30m[47m│ unless root@example.org has told you to.                                  │[1m[37m[40m [8;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [9;2H(B[m[30m[47m│ This name will also be used by other programs. It should be the single,   │[1m[37m[40m [10;2H(B[m[30m[47m│ fully qualified domain name (FQDN).                                       │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ Thus, if a mail address on the local host is foo@example.org, the         │[1m[37m[40m [13;2H(B[m[30m[47m│ correct value for this option would be example.org.                       │[1m[37m[40m [14;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [15;2H(B[m[30m[47m│ System mail name:                                                         │[1m[37m[40m [16;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [17;2H(B[m[30m[47m│ [37m[45mfrank-virtual-machine____________________________________________________[30m[47m │[1m[37m[40m [18;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [19;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [20;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [21;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [22;3H                                                                             [17;25H(B[m[37m[45m_____________________[?25l[19;23H[41m<Ok>[19;24H[?12l[?25h[24;1H[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[5;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[6;2H│                                                                           │[1m[37m[40m [7;2H(B[m[30m[47m│ The string '' does not follow RFC 1035 and does not appear to be a valid  │[1m[37m[40m [8;2H(B[m[30m[47m│ IP address.                                                               │[1m[37m[40m [9;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [10;2H(B[m[30m[47m│ RFC 1035 states that 'each component must start with an alphanum, end     │[1m[37m[40m [11;2H(B[m[30m[47m│ with an alphanum and contain only alphanums and hyphens. Components must  │[1m[37m[40m [12;2H(B[m[30m[47m│ be separated by full stops.'                                              │[1m[37m[40m [13;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [14;2H(B[m[30m[47m│ Please choose whether you want to keep that choice anyway.                │[1m[37m[40m [15;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│ Ignore incorrect hostname entry?                                          │[1m[37m[40m [17;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [18;2H(B[m[30m[47m│                    <Yes>                       [37m[41m<No>[30m[47m                       │[1m[37m[40m [19;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [20;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [21;3H                                                                             [18;52H[18;23H(B[m[37m[41m<Yes>[23C[30m[47m<No>[18;24H[?12l[?25h[24;1H[37m[40m(B[m[39;49m[K[?1049lSelecting previously unselected package postfix.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 249528 files and directories currently installed.)
+Unpacking postfix (from .../postfix_2.9.6-1~12.04.1_i386.deb) ...
+Processing triggers for man-db ...
+Processing triggers for ufw ...
+Processing triggers for ureadahead ...
+Setting up postfix (2.9.6-1~12.04.1) ...
+Adding group `postfix' (GID 127) ...
+Done.
+Adding system user `postfix' (UID 118) ...
+Adding new user `postfix' (UID 118) with group `postfix' ...
+Not creating home directory `/var/spool/postfix'.
+Creating /etc/postfix/dynamicmaps.cf
+Adding tcp map entry to /etc/postfix/dynamicmaps.cf
+Adding sqlite map entry to /etc/postfix/dynamicmaps.cf
+Adding group `postdrop' (GID 128) ...
+Done.
+setting myhostname: frank-virtual-machine
+setting alias maps
+setting alias database
+mailname is not a fully qualified domain name.  Not changing /etc/mailname.
+setting destinations: localhost, frank-virtual-machine, localhost.localdomain, localhost
+setting relayhost: 
+setting mynetworks: 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+setting mailbox_size_limit: 0
+setting recipient_delimiter: +
+setting inet_interfaces: all
+/etc/aliases does not exist, creating it.
+WARNING: /etc/aliases exists, but does not have a root alias.
+
+Postfix is now set up with a default configuration.  If you need to make 
+changes, edit
+/etc/postfix/main.cf (and others) as needed.  To view Postfix configuration
+values, see postconf(1).
+
+After modifying main.cf, be sure to run '/etc/init.d/postfix reload'.
+
+Running newaliases
+ * Stopping Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+ * Starting Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# dpkg-reconfigure postfix
+ * Stopping Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[3;3H[30m[47m┌────────────────────────┤ [31mPostfix Configuration[30m ├────────────────────────┐[4;3H│                                                                         │[1m[37m[40m [5;3H(B[m[30m[47m│ Please select the mail server configuration type that best meets your    [1m[37m[40m [6;3H(B[m[30m[47m│ needs.                                                                   [1m[37m[40m [7;3H(B[m[30m[47m│                                                                          [1m[37m[40m [8;3H(B[m[30m[47m│  No configuration:                                                       [1m[37m[40m [9;3H(B[m[30m[47m│   Should be chosen to leave the current configuration unchanged.         [1m[37m[40m [10;3H(B[m[30m[47m│  Internet site:                                                          [1m[37m[40m [11;3H(B[m[30m[47m│   Mail is sent and received directly using SMTP.                         [1m[37m[40m [12;3H(B[m[30m[47m│  Internet with smarthost:                                                [1m[37m[40m [13;3H(B[m[30m[47m│   Mail is received directly using SMTP or by running a utility such      [1m[37m[40m [14;3H(B[m[30m[47m│   as fetchmail. Outgoing mail is sent using a smarthost.                 [1m[37m[40m [15;3H(B[m[30m[47m│  Satellite system:                                                       [1m[37m[40m [16;3H(B[m[30m[47m│   All mail is sent to another machine, called a 'smarthost', for         [1m[37m[40m [17;3H(B[m[30m[47m│ delivery.                                                                [1m[37m[40m [18;3H(B[m[30m[47m│  Local only:                                                             [1m[37m[40m [19;3H(B[m[30m[47m│                                                                          [1m[37m[40m [20;3H(B[m[30m[47m│                                 <Ok>                                     [1m[37m[40m [21;3H(B[m[30m[47m│                                                                         │[1m[37m[40m [22;3H(B[m[30m[47m└─────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [23;4H                                                                           [5;5H[20;37H(B[m[37m[41m<Ok>[20;38H[?12l[?25h
+
+
+
+[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[6;21H[30m[47m┌──────┤ [31mPostfix Configuration[30m ├───────┐[7;21H│ General type of mail configuration:  │[1m[37m[40m [8;21H(B[m[30m[47m│                                      │[1m[37m[40m [9;21H(B[m[30m[47m│       No configuration               │[1m[37m[40m [10;21H(B[m[30m[47m│       [37m[41mInternet Site          [30m[47m        │[1m[37m[40m [11;21H(B[m[30m[47m│       Internet with smarthost        │[1m[37m[40m [12;21H(B[m[30m[47m│       Satellite system               │[1m[37m[40m [13;21H(B[m[30m[47m│       Local only                     │[1m[37m[40m [14;21H(B[m[30m[47m│                                      │[1m[37m[40m [15;21H(B[m[30m[47m│                                      │[1m[37m[40m [16;21H(B[m[30m[47m│       <Ok>           <Cancel>        │[1m[37m[40m [17;21H(B[m[30m[47m│                                      │[1m[37m[40m [18;21H(B[m[30m[47m└──────────────────────────────────────┘[1m[37m[40m [19;22H                                        [10;29H[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[3;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[4;2H│ The "mail name" is the domain name used to "qualify" _ALL_ mail           │[1m[37m[40m [5;2H(B[m[30m[47m│ addresses without a domain name. This includes mail to and from <root>:   │[1m[37m[40m [6;2H(B[m[30m[47m│ please do not make your machine send out mail from root@example.org       │[1m[37m[40m [7;2H(B[m[30m[47m│ unless root@example.org has told you to.                                  │[1m[37m[40m [8;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [9;2H(B[m[30m[47m│ This name will also be used by other programs. It should be the single,   │[1m[37m[40m [10;2H(B[m[30m[47m│ fully qualified domain name (FQDN).                                       │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ Thus, if a mail address on the local host is foo@example.org, the         │[1m[37m[40m [13;2H(B[m[30m[47m│ correct value for this option would be example.org.                       │[1m[37m[40m [14;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [15;2H(B[m[30m[47m│ System mail name:                                                         │[1m[37m[40m [16;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [17;2H(B[m[30m[47m│ [37m[45m_________________________________________________________________________[30m[47m │[1m[37m[40m [18;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [19;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [20;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [21;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [22;3H                                                                             [17;4H(B[m[37m[45mserver1.example.com[?25l[19;23H[41m<Ok>[19;24H[?12l[?25h[24;1H[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[3;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[4;2H│ Mail for the 'postmaster', 'root', and other system accounts needs to be  │[1m[37m[40m [5;2H(B[m[30m[47m│ redirected to the user account of the actual system administrator.        │[1m[37m[40m [6;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [7;2H(B[m[30m[47m│ If this value is left empty, such mail will be saved in                   │[1m[37m[40m [8;2H(B[m[30m[47m│ /var/mail/nobody, which is not recommended.                               │[1m[37m[40m [9;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [10;2H(B[m[30m[47m│ Mail is not delivered to external delivery agents as root.                │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ If you already have a /etc/aliases file and it does not have an entry     │[1m[37m[40m [13;2H(B[m[30m[47m│ for root, then you should add this entry.  Leave this blank to not add    │[1m[37m[40m [14;2H(B[m[30m[47m│ one.                                                                      │[1m[37m[40m [15;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│ Root and postmaster mail recipient:                                       │[1m[37m[40m [17;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [18;2H(B[m[30m[47m│ [37m[45m_________________________________________________________________________[30m[47m │[1m[37m[40m [19;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [20;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [21;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [22;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [23;3H                                                                             [18;4H(B[m[37m[45mreedkevin88[?25l[?12l[?25h[24;1H[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[7;3H[30m[47m┌────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[8;3H│ Please give a comma-separated list of domains for which this machine     │[1m[37m[40m [9;3H(B[m[30m[47m│ should consider itself the final destination. If this is a mail domain   │[1m[37m[40m [10;3H(B[m[30m[47m│ gateway, you probably want to include the top-level domain.              │[1m[37m[40m [11;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [12;3H(B[m[30m[47m│ Other destinations to accept mail for (blank for none):                  │[1m[37m[40m [13;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [14;3H(B[m[30m[47m│ [37m[45mlocalhost, frank-virtual-machine, localhost.localdomain, localhost______[30m[47m │[1m[37m[40m [15;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [16;3H(B[m[30m[47m│                   <Ok>                       <Cancel>                    │[1m[37m[40m [17;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [18;3H(B[m[30m[47m└──────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [19;4H                                                                            [14;71H[?25l[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[7;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[8;2H│                                                                           │[1m[37m[40m [9;2H(B[m[30m[47m│ If synchronous updates are forced, then mail is processed more slowly.    │[1m[37m[40m [10;2H(B[m[30m[47m│ If not forced, then there is a remote chance of losing some mail if the   │[1m[37m[40m [11;2H(B[m[30m[47m│ system crashes at an inopportune time, and you are not using a journaled  │[1m[37m[40m [12;2H(B[m[30m[47m│ filesystem (such as ext3).                                                │[1m[37m[40m [13;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [14;2H(B[m[30m[47m│ Force synchronous updates on mail queue?                                  │[1m[37m[40m [15;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│                    <Yes>                       [37m[41m<No>[30m[47m                       │[1m[37m[40m [17;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [18;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [19;3H                                                                             [16;52H[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[3;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[4;2H│ Please specify the network blocks for which this host should relay mail.  │[1m[37m[40m [5;2H(B[m[30m[47m│ The default is just the local host, which is needed by some mail user     │[1m[37m[40m [6;2H(B[m[30m[47m│ agents. The default includes local host for both IPv4 and IPv6. If just   │[1m[37m[40m [7;2H(B[m[30m[47m│ connecting via one IP version, the unused value(s) may be removed.        │[1m[37m[40m [8;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [9;2H(B[m[30m[47m│ If this host is a smarthost for a block of machines, you need to specify  │[1m[37m[40m [10;2H(B[m[30m[47m│ the netblocks here, or mail will be rejected rather than relayed.         │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ To use the postfix default (which is based on the connected subnets),     │[1m[37m[40m [13;2H(B[m[30m[47m│ leave this blank.                                                         │[1m[37m[40m [14;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [15;2H(B[m[30m[47m│ Local networks:                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [17;2H(B[m[30m[47m│ [37m[45m127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128_____________________________[30m[47m │[1m[37m[40m [18;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [19;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [20;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [21;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [22;3H                                                                             [17;48H[?25l[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[7;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[8;2H│ Please specify the limit that Postfix should place on mailbox files to    │[1m[37m[40m [9;2H(B[m[30m[47m│ prevent runaway software errors. A value of zero (0) means no limit. The  │[1m[37m[40m [10;2H(B[m[30m[47m│ upstream default is 51200000.                                             │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ Mailbox size limit (bytes):                                               │[1m[37m[40m [13;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [14;2H(B[m[30m[47m│ [37m[45m0________________________________________________________________________[30m[47m │[1m[37m[40m [15;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [17;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [18;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [19;3H                                                                             [14;5H(B[m[37m[45m_0[?25l[?12l[?25h[24;1H[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H[?25l[?12l[?25h(B[m[37m[45mPackage configuration[6;2H[30m[47m┌─────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[7;2H│ Please choose the character that will be used to define a local address   │[1m[37m[40m [8;2H(B[m[30m[47m│ extension.                                                                │[1m[37m[40m [9;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [10;2H(B[m[30m[47m│ To not use address extensions, leave the string blank.                    │[1m[37m[40m [11;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [12;2H(B[m[30m[47m│ Local address extension character:                                        │[1m[37m[40m [13;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [14;2H(B[m[30m[47m│ [37m[45m+________________________________________________________________________[30m[47m │[1m[37m[40m [15;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [16;2H(B[m[30m[47m│                    <Ok>                        <Cancel>                   │[1m[37m[40m [17;2H(B[m[30m[47m│                                                                           │[1m[37m[40m [18;2H(B[m[30m[47m└───────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [19;3H                                                                             [14;5H[?25l[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049l[?1049h[1;24r[4l[?25l(B[m[37m[40m[1;24r[H[2J[1;1H[1m[37m[45m                                                                                [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H                                                                                [7;1H                                                                                [8;1H                                                                                [9;1H                                                                                [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H                                                                                [14;1H                                                                                [15;1H                                                                                [16;1H                                                                                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                               [24;79H [4h [4l[1;1H(B[m[37m[45mPackage configuration[3;3H[30m[47m┌────────────────────────┤ [31mPostfix Configuration[30m ├─────────────────────────┐[4;3H│ By default, whichever Internet protocols are enabled on the system at    │[1m[37m[40m [5;3H(B[m[30m[47m│ installation time will be used. You may override this default with any   │[1m[37m[40m [6;3H(B[m[30m[47m│ of the following:                                                        │[1m[37m[40m [7;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [8;3H(B[m[30m[47m│  all : use both IPv4 and IPv6 addresses;                                 │[1m[37m[40m [9;3H(B[m[30m[47m│  ipv6: listen only on IPv6 addresses;                                    │[1m[37m[40m [10;3H(B[m[30m[47m│  ipv4: listen only on IPv4 addresses.                                    │[1m[37m[40m [11;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [12;3H(B[m[30m[47m│ Internet protocols to use:                                               │[1m[37m[40m [13;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [14;3H(B[m[30m[47m│                                   [37m[41mall  [30m[47m                                  │[1m[37m[40m [15;3H(B[m[30m[47m│                                   ipv6                                   │[1m[37m[40m [16;3H(B[m[30m[47m│                                   ipv4                                   │[1m[37m[40m [17;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [18;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [19;3H(B[m[30m[47m│                   <Ok>                       <Cancel>                    │[1m[37m[40m [20;3H(B[m[30m[47m│                                                                          │[1m[37m[40m [21;3H(B[m[30m[47m└──────────────────────────────────────────────────────────────────────────┘[1m[37m[40m [22;4H                                                                            [14;39H[?12l[?25h[24;1H(B[m[37m[40m(B[m[39;49m[K[?1049lsetting synchronous mail queue updates: false
+changing /etc/mailname to server1.example.com
+setting myorigin
+setting destinations: localhost, frank-virtual-machine, localhost.localdomain, localhost
+setting relayhost: 
+setting mynetworks: 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+setting mailbox_size_limit: 0
+setting recipient_delimiter: +
+setting inet_interfaces: all
+setting inet_protocols: all
+WARNING: /etc/aliases exists, but does not have a root alias.
+
+Postfix is now set up with the changes above.  If you need to make changes, edit
+/etc/postfix/main.cf (and others) as needed.  To view Postfix configuration
+values, see postconf(1).
+
+After modifying main.cf, be sure to run '/etc/init.d/postfix reload'.
+
+Running newaliases
+ * Stopping Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+ * Starting Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# postconf -e 'mialbox-[K_command [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[Kailbox_command '[K ='
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# postconf -e 'mailbox_command  ='[K /opt[K[K[K[Krunner [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmailbox_command =[1P[A]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# [C[C[C[C[C[C[C[C[C[C[C[C"mailbox_command [1@=[A]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C ' [1P [K[1P [1P [1P [1P [1P [1P [K[C / b i n / b a s h [C - l [C - c [C ' c d [C / o p t / d i g e s t - e r i c [C & & [C s c r i p t / r a i l s [C r u n n e r [C - e [C d e v e l o p m e n t [C '  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\  ' ' G r o u p . d a i l y _ r e m i n d e r ' \ ' ' ' " [C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@T[1@a[1@s[1@k[1@k[1P[1@M[1@a[1@i[1@l[1@e[1@r[1@.[1@r[1@e[1@c[1@e[1@i[1@v[1@e[1@([1@S[1@T[1@D[1@I[1@N[1@)[1@.[1@r[1@e[1@a[1@d[C[C[C[C[C[C[C[C
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git remote add heroku git@he roku.com:digest-eric.git
+fatal: remote heroku already exists.
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git remove [K[K[K[K[K[K[Kremote remove heroku
+error: Unknown subcommand: remove
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote rm <name>
+   or: git remote set-head <name> (-a | -d | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote set-url <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git remote remove heroku[1P[1P[1P[1P heroku[1P[1P[1P heroku[C herokur herokum heroku
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git remote rm heroku[4@emove[C[C[C[C[C[C[Cadd heroku git@herroku.com:digest-eric.git
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git push heroku master
+The authenticity of host 'heroku.com (50.19.85.154)' can't be established.
+RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'heroku.com,50.19.85.154' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../Gemfile
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# git statuspush heroku master
+Warning: Permanently added the RSA host key for IP address '50.19.85.156' to the list of known hosts.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? 
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+04:84:72:23:4d:0c:41:35:51:44:f4:1d:b2:d5:35:c7 root@frank-virtual-machine
+The key's randomart image is:
++--[ RSA 2048]----+
+| .+B=OB . o. .o..|
+|  o *. o = ..  oE|
+|   + .  + .      |
+|       .         |
+|        S        |
+|                 |
+|                 |
+|                 |
+|                 |
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# k[Kheroku kep[Kys:add
+Enter your Heroku credentials.
+Email: reedkevin88@gmail.com
+Password (typing will be hidden): 
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...ExoASXo8uv root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# heroku keys:addssh-keygen -t rsagit push heroku master[12Pstatuspush heroku master[12Pstatuspush heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-eric/scriptroot@frank-virtual-machine:/opt/digest-eric/script# he[K[Kcd ..
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys add[K[K[K[K:add
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add[10Pcd ..git push heroku master
+Warning: Permanently added the RSA host key for IP address '50.19.85.132' to the list of known hosts.
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...ExoASXo8uv root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# keroke[K[K[K[K[K[Kheroku key:[Ks:remove
+ !    Usage: heroku keys:remove KEY
+ !    Must specify KEY to remove.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove reedkevin88@gmai l.com
+Removing reedkevin88@gmail.com SSH key... failed
+ !    Not found
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove reedkevin88@gmaill.com[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kroot@virtual-[K[K[K[K[K[K[K[Kfrank-virtu al-machine
+Removing root@frank-virtual-machine SSH key... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+You have no keys.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ceedkevin88@gmail[5P.com[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# rm /root/..s[K[K
+./                    .gnome2_private/      .profile
+../                   .gstreamer-0.10/      .pulse/
+.bash_history         .gtk-bookmarks        .pulse-cookie
+.bashrc               .gvfs/                .Skype/
+.bundle/              .heroku/              .ssh/
+.cache/               .ICEauthority         .swt/
+.config/              .lesshst              .thumbnails/
+.dbus/                .local/               .thunderbird/
+.dmrc                 .mission-control/     .viminfo
+.gconf/               .mozilla/             .Xauthority
+.gem/                 .mysql_history        .xsession-errors
+.gitconfig            .netrc                .xsession-errors.old
+.gnome2/              .odesk/               
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# rm /root/.ssh/id_rsa
+id_rsa      id_rsa.pub  
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# rm /root/.ssh/id_rsa.b[Kpug[Kb
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...ExoASXo8uv root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+03:f9:75:bf:24:db:e1:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|       .         |
+|      o   . .    |
+|       o . . o   |
+|        S   + *  |
+|         .   @ B |
+|            o X .|
+|             +.o.|
+|            E.o+.|
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ssh-keygen -t rsa[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kheor[K[Kroku -ad[K[K[Kkeys:add 03:f9:75:bf:24:db:e 1:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine
+ !    Invalid argument: "root@frank-virtual-machine"
+Usage: heroku keys:add [KEY]
+
+ add a key for the current user
+
+ if no KEY is specified, will try to find ~/.ssh/id_[rd]sa.pub
+
+Examples:
+
+ $ heroku keys:add
+ Could not find an existing public key.
+ Would you like to generate one? [Yn] y
+ Generating new SSH public key.
+ Uploading SSH public key /.ssh/id_rsa.pub... done
+
+ $ heroku keys:add /my/key.pub
+ Uploading SSH public key /my/key.pub... done
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+Uploading SSH public key 03:f9:75:bf:24:db:e1:52:32:bd:c9:8d:6f:e2:1b:9a... failed
+ !    Could not upload SSH public key: key file '03:f9:75:bf:24:db:e1:52:32:bd:c9:8d:6f:e2:1b:9a' does not exist
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a
+Uploading SSH public key 03:f9:75:bf:24:db:e1:52:32:bd:c9:8d:6f:e2:1b:9a... failed
+ !    Could not upload SSH public key: key file '03:f9:75:bf:24:db:e1:52:32:bd:c9:8d:6f:e2:1b:9a' does not exist
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# herou[Kku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...4irO8yg9y5 root@frank-virtual-machine
+ssh-rsa AAAAB3NzaC...ExoASXo8uv root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine[A[18Pssh-keygen -t rsa
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pheroku keysrm /root/.ssh/id_rsa.pub[9Pheroku keys:addgit push heroku master[11Pheroku keysgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git remote update
+Fetching origin
+remote: Counting objects: 33, done.[K
+remote: Compressing objects:   6% (1/15)   [Kremote: Compressing objects:  13% (2/15)   [Kremote: Compressing objects:  20% (3/15)   [Kremote: Compressing objects:  26% (4/15)   [Kremote: Compressing objects:  33% (5/15)   [Kremote: Compressing objects:  40% (6/15)   [Kremote: Compressing objects:  46% (7/15)   [Kremote: Compressing objects:  53% (8/15)   [Kremote: Compressing objects:  60% (9/15)   [Kremote: Compressing objects:  66% (10/15)   [Kremote: Compressing objects:  73% (11/15)   [Kremote: Compressing objects:  80% (12/15)   [Kremote: Compressing objects:  86% (13/15)   [Kremote: Compressing objects:  93% (14/15)   [Kremote: Compressing objects: 100% (15/15)   [Kremote: Compressing objects: 100% (15/15), done.[K
+remote: Total 23 (delta 14), reused 16 (delta 7)[K
+Unpacking objects:   4% (1/23)   Unpacking objects:   8% (2/23)   Unpacking objects:  13% (3/23)   Unpacking objects:  17% (4/23)   Unpacking objects:  21% (5/23)   Unpacking objects:  26% (6/23)   Unpacking objects:  30% (7/23)   Unpacking objects:  34% (8/23)   Unpacking objects:  39% (9/23)   Unpacking objects:  43% (10/23)   Unpacking objects:  47% (11/23)   Unpacking objects:  52% (12/23)   Unpacking objects:  56% (13/23)   Unpacking objects:  60% (14/23)   Unpacking objects:  65% (15/23)   Unpacking objects:  69% (16/23)   Unpacking objects:  73% (17/23)   Unpacking objects:  78% (18/23)   Unpacking objects:  82% (19/23)   Unpacking objects:  86% (20/23)   Unpacking objects:  91% (21/23)   Unpacking objects:  95% (22/23)   Unpacking objects: 100% (23/23)   Unpacking objects: 100% (23/23), done.
+From https://github.com/RailsApps/rails-stripe-membership-saas
+   8501167..2e13c59  master     -> origin/master
+Fetching heroku
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+error: Could not fetch heroku
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# rm git remote updatepush heroku master[11Pheroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine[A[18Pssh-keygen -t rsa
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pheroku keysrm /root/.ssh/id_rsa.pub
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# rm /root/.ssh/id_rsa.pub[K[K[K[K
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ls /root/.ssh/
+known_hosts
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat know
+cat: know: No such file or directory
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat known_hosts
+cat: known_hosts: No such file or directory
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# keys[K[K[K[Kheroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...4irO8yg9y5 root@frank-virtual-machine
+ssh-rsa AAAAB3NzaC...ExoASXo8uv root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# re[K[Kkeroku reys[K[K[K[Kkeys:rm[Kemove root@r[Kfram[Knk-virtu al-machine
+keroku: command not found
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# keroku keys:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# eroku keys:remove root@frank-virtual[1P-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C
+
+Removing root@frank-virtual-machine SSH key... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...4irO8yg9y5 root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtuaal-machine
+Removing root@frank-virtual-machine SSH key... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+You have no keys.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# k
+[C[C[C[C[C[C[C[C[C[C[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat known_hosts[Kls /root/.ssh/rm /root/.ssh/id_rsa.pub[7Pgit remote updatepush heroku master[11Pheroku keys:add 03:f9:75:bf:24:db:e11:52:32:bd:c9:8d:6f:e2:1b:9a root@frank-virtual-machine[A[18Pssh-keygen -t rsa
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pheroku keysssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+27:b5:56:ae:71:dd:64:cf:78:37:61:4f:22:8c:bf:c7 root@frank-virtual-machine
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|           o     |
+|          o + .o+|
+|         . = o.O+|
+|        S = + o.B|
+|         + + o .o|
+|          . . E  |
+|             .   |
+|                 |
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:a[K[K
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...yvHVNZH515 root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# push heroku [K[K[K[K[K[K[K[K[K[K[K[Kgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git checkout
+M	Gemfile
+M	script/runner
+M	script/typescript
+Your branch and 'origin/master' have diverged,
+and have 1 and 6 different commits each, respectively.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku logout
+Local credentials cleared.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# keroku login
+keroku: command not found
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# k[Kheroku login
+Enter your Heroku credentials.
+Email: adreed      reedkevin88@gmailc .com
+Password (typing will be hidden): 
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku logout
+Local credentials cleared.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku login
+Enter your Heroku credentials.
+Email: reedv kevin88@gmail.com
+Password (typing will be hidden): 
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku loginout
+Local credentials cleared.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku logout[1Pin
+Enter your Heroku credentials.
+Email: re  reedkevin88@gmail.com
+Password (typing will be hidden): 
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...yvHVNZH515 root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ke[K[Kheroku keys:rm root@frank-virtual-m achine
+ !    `keys:rm` is not a heroku command.
+ !    Perhaps you meant `keys` or `keys:add`.
+ !    See `heroku help` for a list of available commands.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:rm root@frank-virtual-maachine[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C root@frank-virtual-mac[1Phine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[Co root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C root@frank-virtual-mac[1Phine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[Ce root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[Cm root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cv root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce root@frank-virtual-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Removing root@frank-virtual-machine SSH key... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+You have no keys.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[C[Cm root@frank-virtual-ma[4Pchine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cloginout[1Pinoutgit push heroku master[10Pheroku logink[C[C[C[C[C[C[C[C[C[C[Cheroku logout[1Pgit checkoutpush heroku master[11Pheroku keys:addssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+ec:7a:2a:6c:8f:23:4c:ee:53:3b:f3:17:3f:f5:5b:d9 root@frank-virtual-machine
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|       .         |
+|        S        |
+|  . .  ..   .   o|
+| + o .  .o . . .E|
+|  = O. .o o   .. |
+| ..+.B=+   .  .. |
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+passphrase too short: have 4 bytes, need > 4
+Saving the key failed: /root/.ssh/id_rsa.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? iam   y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+5e:94:61:7f:94:62:7e:18:f1:d3:06:23:5e:fa:27:d0 root@frank-virtual-machine
+The key's randomart image is:
++--[ RSA 2048]----+
+|          o o.=. |
+|         . =+B.+ |
+|          oo=+E o|
+|         .  o+.o |
+|        S .  .o .|
+|       . .     o |
+|        .        |
+|                 |
+|                 |
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...3I8Y8RAcyz root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# hero[K[K[K[Kgit push heroku mster
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku mster[K[K[K[Kater[K[K[Kster
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat .[K/root/
+.bash_history           .gstreamer-0.10/        .pulse/
+.bashrc                 .gtk-bookmarks          .pulse-cookie
+.bundle/                .gvfs/                  .Skype/
+.cache/                 .heroku/                .ssh/
+.config/                .ICEauthority           .swt/
+cron.log                .lesshst                Templates/
+.dbus/                  .local/                 .thumbnails/
+Desktop/                .mission-control/       .thunderbird/
+.dmrc                   .mozilla/               ubuntu12.04_32bit.txt
+Documents/              Music/                  ubuntu12.04_32bit.txt~
+Downloads/              .mysql_history          Videos/
+.gconf/                 .netrc                  .viminfo
+.gem/                   .odesk/                 workspace/
+.gitconfig              Pictures/               .Xauthority
+.gnome2/                .profile                .xsession-errors
+.gnome2_private/        Public/                 .xsession-errors.old
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat /root/.ssh/
+id_rsa       id_rsa.pub   known_hosts  
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat /root/.ssh/id_ra[Ksa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAisyZkg+Vl4/Mq6ElAiALf5FokIX31Vg94wKXgUKiaPdoQNOs2ykW06OVhloLNtmzo91UzjbTSjgBPEFlp9JgxgmFJfL/38p69mZ0prRVoKyPOWjdeuNCaT4vrrZrSp0TTtxS/haW9FRpgp/wd17o8FiFnCNNXKDyDI2W5bHyPbhMVJUPQ6puLIBeMgFt4oCHhvxECYoXBuFpnaLu0DoaTc/Ss26zVP45TRuqpJOtF7yrhd7LLKePQ/vyoEpzDZVWSRF7T9Vd9ljBH6XyoThsae/6RrirHrtg+yr7i/UfZpMBLgE8KqQrbouvQy4uK9t52aC1vsMBF53I8Y8RAcyz root@frank-virtual-machine
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat /root/.ssh/id_rsa.pub[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[1Pb[Keh[K[Kheroku logout
+Local credentials cleared.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku login
+Enter your Heroku credentials.
+Email: ke	  reedkevin88@fg  gmail.com
+Password (typing will be hidden): 
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# push [K[K[K[K[Kgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git add remove[K[K[K[K[K[K[K[K[K[Kremote add [K[K[K[K[K
+heroku
+origin
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git remote heroku
+error: Unknown subcommand: heroku
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote rm <name>
+   or: git remote set-head <name> (-a | -d | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote set-url <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git remote heroku[Kpush heroku master[10Pheroku loginoutcat /root/.ssh/id_rsa.pub[3Pgit push heroku master[1Pster[10Pheroku keys:addssh-keygen -t rsa -c[KC "reedkevin88@g mail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+4c:2d:cb:23:0f:d9:56:59:e4:c0:5b:be:31:f3:53:da reedkevin88@gmail.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|         ...o    |
+|         ..=.    |
+|        o ++.    |
+|       * +. =   .|
+|      + S    * + |
+|       = .  . + E|
+|        .      . |
+|                 |
+|                 |
++-----------------+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove [K
+ !    Usage: heroku keys:remove KEY
+ !    Must specify KEY to remove.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove[K[K[K[K[K[K[K
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...3I8Y8RAcyz root@frank-virtual-machine
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:remove root@frank-virtu al-machine
+Removing root@frank-virtual-machine SSH key... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ke[K[Kheroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...D69Be6fiaV reedkevin88@gmail.com
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku master[11Pheroku keys:addremove root@frank-virtuaal-machine[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:removessh-keygen -t rsa -C "reedkevin88@gmmail.com"[A]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# [18Pgit remote heroku
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kpush heroku master[10Pheroku loginoutcat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDUz7BNyt/mTD9VFwDfGJ78skv8jjeOrWXK1OLhyDGBQ58mYMKX3vD2L/T+v/Sb0lkId3cfYnyBAi0PmxvxVWquFGWTCexeL+K2vFVErBhxDJj6rTULPkxR8DCi8Gp3setHGoqM3qjxh2Jh6sa1yzzaSelCn5V/K0u8R8FI9ATgXFgVM41OGAtY3NOrOibye6wPKwySFc2SLrUjzc5uMxmvOxe5a/uzH77o4M1fSr5u/96G1Te0yyI2Pu5YYKibWzvspDbSspIq5YGyoKZStpe2XS9m1KUJ7fq8EYe795BLOTvpayONOYLC8E7QsSTdFhcLFcKYKBViZD69Be6fiaV reedkevin88@gmail.com
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# ^C
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# cat /root/.ssh/id_rsa.pub[3Pgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# herou[Kku
+Usage: heroku COMMAND [--app APP] [command-specific-options]
+
+Primary help topics, type "heroku help TOPIC" for more details:
+
+  addons    #  manage addon resources
+  apps      #  manage apps (create, destroy)
+  auth      #  authentication (login, logout)
+  config    #  manage app config vars
+  domains   #  manage custom domains
+  logs      #  display logs for an app
+  ps        #  manage processes (dynos, workers)
+  releases  #  manage app releases
+  run       #  run one-off commands (console, rake)
+  sharing   #  manage collaborators on an app
+
+Additional topics:
+
+  account      #  manage heroku account options
+  certs        #  manage ssl endpoints for an app
+  db           #  manage the database for an app
+  drains       #  display syslog drains for an app
+  fork         #  clone an existing app
+  git          #  manage git for apps
+  help         #  list commands and display help
+  keys         #  manage authentication keys
+  labs         #  manage optional features
+  maintenance  #  manage maintenance mode for an app
+  pg           #  manage heroku-postgresql databases
+  pgbackups    #  manage backups of heroku postgresql databases
+  plugins      #  manage plugins to the heroku gem
+  regions      #  list available regions
+  stack        #  manage the stack for an app
+  status       #  check status of heroku platform
+  update       #  update the heroku client
+  version      #  display version
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku[K[K[K[K[K[Kgit remove -v
+git: 'remove' is not a git command. See 'git --help'.
+
+Did you mean this?
+	remote
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git remove -v[C[1P[1@t
+heroku	git@heroku.com:digest-eric.git (fetch)
+heroku	git@heroku.com:digest-eric.git (push)
+origin	https://github.com/RailsApps/rails-stripe-membership-saas.git (fetch)
+origin	https://github.com/RailsApps/rails-stripe-membership-saas.git (push)
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku login
+Enter your Heroku credentials.
+Email: reedkein  vin88@gmail.cm om
+Password (typing will be hidden): 
+Authentication failed.
+Enter your Heroku credentials.
+Email: reedkevin88@gmailc .com
+Password (typing will be hidden): 
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku logingit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...D69Be6fiaV reedkevin88@gmail.com
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add ~/.ssh/id_ra[Ksa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:add ~/.ssh/id_rsa.pub[Kgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# git push heroku masterheroku keys:add ~/.ssh/id_rsa.pub[K
+=== reedkevin88@gmail.com Keys
+ssh-rsa AAAAB3NzaC...D69Be6fiaV reedkevin88@gmail.com
+
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys:clear
+Removing all SSH keys... done
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys
+You have no keys.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku keys[K[K[K[Klogin
+Enter your Heroku credentials.
+Email: reedkevin88@gmail.co
+Password (typing will be hidden): 
+Authentication failed.
+Enter your Heroku credentials.
+Email: reedkevin88@gmail.com
+Password (typing will be hidden): 
+Found existing public key: /root/.ssh/id_rsa.pub
+Uploading SSH public key /root/.ssh/id_rsa.pub... done
+Authentication successful.
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# heroku login[1Pkeys:clear[Kgit push heroku master
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# SSH_AUTH_SOCK=0
+]0;root@frank-virtual-machine: /opt/digest-ericroot@frank-virtual-machine:/opt/digest-eric# SSH_AUTH_SOCK=0git push heroku master
+Enter passphrase for key '/root/.ssh/id_rsa': 
+Counting objects: 1065, done.
+Compressing objects:   0% (1/593)   Compressing objects:   1% (6/593)   Compressing objects:   2% (12/593)   Compressing objects:   3% (18/593)   Compressing objects:   4% (24/593)   Compressing objects:   5% (30/593)   Compressing objects:   6% (36/593)   Compressing objects:   7% (42/593)   Compressing objects:   8% (48/593)   Compressing objects:   9% (54/593)   Compressing objects:  10% (60/593)   Compressing objects:  11% (66/593)   Compressing objects:  12% (72/593)   Compressing objects:  13% (78/593)   Compressing objects:  14% (84/593)   Compressing objects:  15% (89/593)   Compressing objects:  16% (95/593)   Compressing objects:  17% (101/593)   Compressing objects:  18% (107/593)   Compressing objects:  19% (113/593)   Compressing objects:  20% (119/593)   Compressing objects:  21% (125/593)   Compressing objects:  22% (131/593)   Compressing objects:  23% (137/593)   Compressing objects:  24% (143/593)   Compressing objects:  25% (149/593)   Compressing objects:  26% (155/593)   Compressing objects:  27% (161/593)   Compressing objects:  28% (167/593)   Compressing objects:  29% (172/593)   Compressing objects:  30% (178/593)   Compressing objects:  31% (184/593)   Compressing objects:  32% (190/593)   Compressing objects:  33% (196/593)   Compressing objects:  34% (202/593)   Compressing objects:  35% (208/593)   Compressing objects:  36% (214/593)   Compressing objects:  37% (220/593)   Compressing objects:  38% (226/593)   Compressing objects:  39% (232/593)   Compressing objects:  40% (238/593)   Compressing objects:  41% (244/593)   Compressing objects:  42% (250/593)   Compressing objects:  43% (255/593)   Compressing objects:  44% (261/593)   Compressing objects:  45% (267/593)   Compressing objects:  46% (273/593)   Compressing objects:  47% (279/593)   Compressing objects:  48% (285/593)   Compressing objects:  49% (291/593)   Compressing objects:  50% (297/593)   Compressing objects:  51% (303/593)   Compressing objects:  52% (309/593)   Compressing objects:  53% (315/593)   Compressing objects:  54% (321/593)   Compressing objects:  55% (327/593)   Compressing objects:  56% (333/593)   Compressing objects:  57% (339/593)   Compressing objects:  58% (344/593)   Compressing objects:  59% (350/593)   Compressing objects:  60% (356/593)   Compressing objects:  61% (362/593)   Compressing objects:  62% (368/593)   Compressing objects:  63% (374/593)   Compressing objects:  64% (380/593)   Compressing objects:  65% (386/593)   Compressing objects:  66% (392/593)   Compressing objects:  67% (398/593)   Compressing objects:  68% (404/593)   Compressing objects:  69% (410/593)   Compressing objects:  70% (416/593)   Compressing objects:  71% (422/593)   Compressing objects:  72% (427/593)   Compressing objects:  73% (433/593)   Compressing objects:  74% (439/593)   Compressing objects:  75% (445/593)   Compressing objects:  76% (451/593)   Compressing objects:  77% (457/593)   Compressing objects:  78% (463/593)   Compressing objects:  79% (469/593)   Compressing objects:  80% (475/593)   Compressing objects:  81% (481/593)   Compressing objects:  82% (487/593)   Compressing objects:  83% (493/593)   Compressing objects:  84% (499/593)   Compressing objects:  85% (505/593)   Compressing objects:  86% (510/593)   Compressing objects:  87% (516/593)   Compressing objects:  88% (522/593)   Compressing objects:  89% (528/593)   Compressing objects:  90% (534/593)   Compressing objects:  91% (540/593)   Compressing objects:  92% (546/593)   Compressing objects:  93% (552/593)   Compressing objects:  94% (558/593)   Compressing objects:  95% (564/593)   Compressing objects:  96% (570/593)   Compressing objects:  97% (576/593)   Compressing objects:  98% (582/593)   Compressing objects:  99% (588/593)   Compressing objects: 100% (593/593)   Compressing objects: 100% (593/593), done.
+Writing objects:   0% (1/1065)   Writing objects:   1% (11/1065)   Writing objects:   2% (22/1065)   Writing objects:   3% (32/1065)   Writing objects:   4% (43/1065)   Writing objects:   5% (54/1065)   Writing objects:   6% (64/1065)   Writing objects:   7% (75/1065)   Writing objects:   8% (86/1065)   Writing objects:   9% (96/1065)   Writing objects:  10% (107/1065)   Writing objects:  11% (118/1065)   Writing objects:  12% (128/1065)   Writing objects:  13% (139/1065)   Writing objects:  14% (150/1065)   Writing objects:  15% (160/1065)   Writing objects:  16% (171/1065)   Writing objects:  17% (182/1065)   Writing objects:  18% (192/1065)   Writing objects:  19% (203/1065)   Writing objects:  20% (213/1065)   Writing objects:  21% (225/1065)   Writing objects:  22% (235/1065)   Writing objects:  23% (245/1065)   Writing objects:  24% (256/1065)   Writing objects:  25% (267/1065)   Writing objects:  26% (277/1065)   Writing objects:  27% (288/1065)   Writing objects:  28% (299/1065)   Writing objects:  29% (309/1065)   Writing objects:  30% (320/1065)   Writing objects:  31% (331/1065)   Writing objects:  32% (341/1065)   Writing objects:  33% (352/1065)   Writing objects:  34% (364/1065), 200.00 KiB | 210 KiB/s   Writing objects:  34% (366/1065), 200.00 KiB | 210 KiB/s   Writing objects:  35% (374/1065), 344.00 KiB | 214 KiB/s   Writing objects:  36% (384/1065), 344.00 KiB | 214 KiB/s   Writing objects:  37% (395/1065), 344.00 KiB | 214 KiB/s   Writing objects:  38% (405/1065), 344.00 KiB | 214 KiB/s   Writing objects:  39% (417/1065), 344.00 KiB | 214 KiB/s   Writing objects:  40% (428/1065), 344.00 KiB | 214 KiB/s   Writing objects:  41% (437/1065), 344.00 KiB | 214 KiB/s   Writing objects:  42% (448/1065), 344.00 KiB | 214 KiB/s   Writing objects:  43% (458/1065), 344.00 KiB | 214 KiB/s   Writing objects:  44% (469/1065), 344.00 KiB | 214 KiB/s   Writing objects:  45% (480/1065), 344.00 KiB | 214 KiB/s   Writing objects:  46% (490/1065), 344.00 KiB | 214 KiB/s   Writing objects:  47% (503/1065), 344.00 KiB | 214 KiB/s   Writing objects:  48% (512/1065), 344.00 KiB | 214 KiB/s   Writing objects:  49% (522/1065), 344.00 KiB | 214 KiB/s   Writing objects:  50% (533/1065), 344.00 KiB | 214 KiB/s   Writing objects:  51% (544/1065), 344.00 KiB | 214 KiB/s   Writing objects:  52% (554/1065), 344.00 KiB | 214 KiB/s   Writing objects:  53% (565/1065), 344.00 KiB | 214 KiB/s   Writing objects:  54% (576/1065), 344.00 KiB | 214 KiB/s   Writing objects:  55% (586/1065), 344.00 KiB | 214 KiB/s   Writing objects:  56% (597/1065), 344.00 KiB | 214 KiB/s   Writing objects:  57% (608/1065), 344.00 KiB | 214 KiB/s   Writing objects:  58% (618/1065), 344.00 KiB | 214 KiB/s   Writing objects:  59% (629/1065), 344.00 KiB | 214 KiB/s   Writing objects:  60% (639/1065), 344.00 KiB | 214 KiB/s   Writing objects:  61% (650/1065), 344.00 KiB | 214 KiB/s   Writing objects:  62% (662/1065), 344.00 KiB | 214 KiB/s   Writing objects:  63% (671/1065), 344.00 KiB | 214 KiB/s   Writing objects:  64% (683/1065), 344.00 KiB | 214 KiB/s   Writing objects:  65% (693/1065), 344.00 KiB | 214 KiB/s   Writing objects:  66% (703/1065), 344.00 KiB | 214 KiB/s   Writing objects:  67% (714/1065), 344.00 KiB | 214 KiB/s   Writing objects:  68% (725/1065), 344.00 KiB | 214 KiB/s   Writing objects:  69% (735/1065), 344.00 KiB | 214 KiB/s   Writing objects:  70% (746/1065), 344.00 KiB | 214 KiB/s   Writing objects:  71% (757/1065), 344.00 KiB | 214 KiB/s   Writing objects:  72% (767/1065), 344.00 KiB | 214 KiB/s   Writing objects:  73% (778/1065), 344.00 KiB | 214 KiB/s   Writing objects:  74% (789/1065), 344.00 KiB | 214 KiB/s   Writing objects:  75% (799/1065), 344.00 KiB | 214 KiB/s   Writing objects:  76% (810/1065), 344.00 KiB | 214 KiB/s   Writing objects:  77% (821/1065), 344.00 KiB | 214 KiB/s   Writing objects:  78% (831/1065), 344.00 KiB | 214 KiB/s   Writing objects:  79% (842/1065), 344.00 KiB | 214 KiB/s   Writing objects:  80% (852/1065), 344.00 KiB | 214 KiB/s   Writing objects:  81% (863/1065), 344.00 KiB | 214 KiB/s   Writing objects:  82% (874/1065), 344.00 KiB | 214 KiB/s   Writing objects:  83% (884/1065), 344.00 KiB | 214 KiB/s   Writing objects:  84% (895/1065), 344.00 KiB | 214 KiB/s   Writing objects:  85% (906/1065), 344.00 KiB | 214 KiB/s   Writing objects:  86% (916/1065), 344.00 KiB | 214 KiB/s   Writing objects:  87% (927/1065), 344.00 KiB | 214 KiB/s   Writing objects:  88% (938/1065), 344.00 KiB | 214 KiB/s   Writing objects:  89% (948/1065), 344.00 KiB | 214 KiB/s   Writing objects:  90% (959/1065), 344.00 KiB | 214 KiB/s   Writing objects:  91% (970/1065), 344.00 KiB | 214 KiB/s   Writing objects:  92% (980/1065), 344.00 KiB | 214 KiB/s   Writing objects:  93% (991/1065), 344.00 KiB | 214 KiB/s   Writing objects:  94% (1003/1065), 344.00 KiB | 214 KiB/s   Writing objects:  95% (1012/1065), 344.00 KiB | 214 KiB/s   Writing objects:  96% (1023/1065), 344.00 KiB | 214 KiB/s   Writing objects:  97% (1034/1065), 344.00 KiB | 214 KiB/s   Writing objects:  98% (1044/1065), 344.00 KiB | 214 KiB/s   Writing objects:  99% (1055/1065), 344.00 KiB | 214 KiB/s   Writing objects: 100% (1065/1065), 344.00 KiB | 214 KiB/s   Writing objects: 100% (1065/1065), 485.62 KiB | 214 KiB/s, done.
+Total 1065 (delta 491), reused 898 (delta 416)
+
+-----> Ruby/Rails app detected
+-----> Using Ruby version: ruby-2.0.0
+-----> Installing dependencies using Bundler version 1.3.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
+       Fetching gem metadata from https://rubygems.org/.........
+       Fetching gem metadata from https://rubygems.org/..
+       Installing rake (10.1.0)
+       Installing i18n (0.6.1)
+       Installing multi_json (1.7.7)
+       Installing activesupport (3.2.13)
+       Installing builder (3.0.4)
+       Installing activemodel (3.2.13)
+       Installing erubis (2.7.0)
+       Installing journey (1.0.4)
+       Installing rack (1.4.5)
+       Installing rack-cache (1.2)
+       Installing rack-test (0.6.2)
+       Installing hike (1.2.3)
+       Installing tilt (1.4.1)
+       Installing sprockets (2.2.2)
+       Installing actionpack (3.2.13)
+       Installing mime-types (1.23)
+       Installing polyglot (0.3.3)
+       Installing treetop (1.4.14)
+       Installing mail (2.5.4)
+       Installing actionmailer (3.2.13)
+       Installing arel (3.0.2)
+       Installing tzinfo (0.3.37)
+       Installing activerecord (3.2.13)
+       Installing activeresource (3.2.13)
+       Installing bcrypt-ruby (3.1.1)
+       Installing sass (3.2.9)
+       Installing bootstrap-sass (2.3.2.0)
+       Installing cancan (1.6.10)
+       Installing chronic (0.9.1)
+       Installing coffee-script-source (1.6.3)
+       Installing execjs (1.4.0)
+       Installing coffee-script (2.2.0)
+       Installing rack-ssl (1.3.3)
+       Installing json (1.8.0)
+       Installing rdoc (3.12.2)
+       Installing thor (0.18.1)
+       Installing railties (3.2.13)
+       Installing coffee-rails (3.2.2)
+       Installing orm_adapter (0.4.0)
+       Installing warden (1.2.3)
+       Installing devise (3.0.0)
+       Using bundler (1.3.2)
+       Installing rails (3.2.13)
+       Installing figaro (0.7.0)
+       Installing jquery-rails (3.0.4)
+       Installing rest-client (1.6.7)
+       Installing rolify (3.2.0)
+       Installing sass-rails (3.2.6)
+       Installing simple_form (2.1.0)
+       Installing sqlite3 (1.3.7)
+       Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+       /tmp/build_1x5hlfg77azla/vendor/ruby-2.0.0/bin/ruby extconf.rb
+       checking for sqlite3.h... no
+       sqlite3.h is missing. Try 'port install sqlite3 +universal'
+       or 'yum install sqlite-devel' and check your shared library search path (the
+       location where your sqlite3 shared library is located).
+       *** extconf.rb failed ***
+       Could not create Makefile due to some reason, probably lack of necessary
+       libraries and/or headers.  Check the mkmf.log file for more details.  You may
+       need configuration options.
+       Provided configuration options:
+       --with-opt-dir
+       --without-opt-dir
+       --with-opt-include
+       --without-opt-include=${opt-dir}/include
+       --with-opt-lib
+       --without-opt-lib=${opt-dir}/lib
+       --with-make-prog
+       --without-make-prog
+       --srcdir=.
+       --curdir
+       --ruby=/tmp/build_1x5hlfg77azla/vendor/ruby-2.0.0/bin/ruby
+       --with-sqlite3-dir
+       --without-sqlite3-dir
+       --with-sqlite3-include
+       --without-sqlite3-include=${sqlite3-dir}/include
+       --with-sqlite3-lib
+       --without-sqlite3-lib=${sqlite3-dir}/
+       --enable-local
+       --disable-local
+       Gem files will remain installed in /tmp/build_1x5hlfg77azla/vendor/bundle/ruby/2.0.0/gems/sqlite3-1.3.7 for inspection.
+       Results logged to /tmp/build_1x5hlfg77azla/vendor/bundle/ruby/2.0.0/gems/sqlite3-1.3.7/ext/sqlite3/gem_make.out
+       An error occurred while installing sqlite3 (1.3.7), and Bundler cannot continue.
+       Make sure that `gem install sqlite3 -v '1.3.7'` succeeds before bundling.
+       Bundler Output: Fetching gem metadata from https://rubygems.org/.........
+       Fetching gem metadata from https://rubygems.org/..
+       Installing rake (10.1.0)
+       Installing i18n (0.6.1)
+       Installing multi_json (1.7.7)
+       Installing activesupport (3.2.13)
+       Installing builder (3.0.4)
+       Installing activemodel (3.2.13)
+       Installing erubis (2.7.0)
+       Installing journey (1.0.4)
+       Installing rack (1.4.5)
+       Installing rack-cache (1.2)
+       Installing rack-test (0.6.2)
+       Installing hike (1.2.3)
+       Installing tilt (1.4.1)
+       Installing sprockets (2.2.2)
+       Installing actionpack (3.2.13)
+       Installing mime-types (1.23)
+       Installing polyglot (0.3.3)
+       Installing treetop (1.4.14)
+       Installing mail (2.5.4)
+       Installing actionmailer (3.2.13)
+       Installing arel (3.0.2)
+       Installing tzinfo (0.3.37)
+       Installing activerecord (3.2.13)
+       Installing activeresource (3.2.13)
+       Installing bcrypt-ruby (3.1.1)
+       Installing sass (3.2.9)
+       Installing bootstrap-sass (2.3.2.0)
+       Installing cancan (1.6.10)
+       Installing chronic (0.9.1)
+       Installing coffee-script-source (1.6.3)
+       Installing execjs (1.4.0)
+       Installing coffee-script (2.2.0)
+       Installing rack-ssl (1.3.3)
+       Installing json (1.8.0)
+       Installing rdoc (3.12.2)
+       Installing thor (0.18.1)
+       Installing railties (3.2.13)
+       Installing coffee-rails (3.2.2)
+       Installing orm_adapter (0.4.0)
+       Installing warden (1.2.3)
+       Installing devise (3.0.0)
+       Using bundler (1.3.2)
+       Installing rails (3.2.13)
+       Installing figaro (0.7.0)
+       Installing jquery-rails (3.0.4)
+       Installing rest-client (1.6.7)
+       Installing rolify (3.2.0)
+       Installing sass-rails (3.2.6)
+       Installing simple_form (2.1.0)
+       Installing sqlite3 (1.3.7)
+       Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+       
+       /tmp/build_1x5hlfg77azla/vendor/ruby-2.0.0/bin/ruby extconf.rb
+       checking for sqlite3.h... no
+       sqlite3.h is missing. Try 'port install sqlite3 +universal'
+       or 'yum install sqlite-devel' and check your shared library search path (the
+       location where your sqlite3 shared library is located).
+       *** extconf.rb failed ***
+       Could not create Makefile due to some reason, probably lack of necessary
+       libraries and/or headers.  Check the mkmf.log file for more details.  You may
+       need configuration options.
+       
+       Provided configuration options:
+       --with-opt-dir
+       --without-opt-dir
+       --with-opt-include
+       --without-opt-include=${opt-dir}/include
+       --with-opt-lib
+       --without-opt-lib=${opt-dir}/lib
+       --with-make-prog
+       --without-make-prog
+       --srcdir=.
+       --curdir
+       --ruby=/tmp/build_1x5hlfg77azla/vendor/ruby-2.0.0/bin/ruby
+       --with-sqlite3-dir
+       --without-sqlite3-dir
+       --with-sqlite3-include
+       --without-sqlite3-include=${sqlite3-dir}/include
+       --with-sqlite3-lib
+       --without-sqlite3-lib=${sqlite3-dir}/
+       --enable-local
+       --disable-local
+       
+       
+       Gem files will remain installed in /tmp/bui

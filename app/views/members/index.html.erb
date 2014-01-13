@@ -1,0 +1,19 @@
+<!-- @include header -->
+<h3>Members</h3>
+<div style="float: right"></div>
+<strong> Displaying 1-50 of 1419 Members</strong>
+<table class="threeColumn solid clickableGlyph fullWidth table">
+  <tbody>
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= link_to member.first_name + " " + member.last_name, member %></td>
+      <td><%= member.email %></td>
+      <td>
+      	<%= member.created_at.to_date %>
+      	<i class="glyphicon glyphicon-chevron-right"></i>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<!-- @include footer -->

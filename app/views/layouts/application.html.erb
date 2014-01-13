@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "School App" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "School App" %>">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+<body class="<%= controller_name %> <%= action_name %> page">
+
+  <!-- Content
+  ================================================== -->
+<div class="wrapper">
+  <div class="header">
+    <div class="container">
+      {{SCHOOL}}
+      <div class="floatRight">
+        <ul>
+        <% if user_signed_in? %>
+          <% if current_user.has_role? :admin %>
+            <li><%= link_to 'Admin', users_path %></li>
+          <% end %>
+          <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path %>  
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'layouts/navigation' %>
+
+  <div class="container main">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </div>
+
+  <div class="footer container">
+    <div class="floatRight">
+      Terms &nbsp; &nbsp;Feature Request &nbsp; &nbsp;Feedback &nbsp; &nbsp;Support
+    </div>
+    <strong>&copy; 2013</strong>
+  </div>
+</body>
+</html>

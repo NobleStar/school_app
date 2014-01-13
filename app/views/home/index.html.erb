@@ -1,0 +1,36 @@
+<div id="welcome" class="hero-unit span7">
+  <br>
+  <h2>School App</h2>
+  <h4>This is reminder app for schools</h4>
+  <br>
+</div>
+<br>
+<div class="container">
+  <div class="floatRight box">
+    <div class="plan"><h3>Platinum</h3></div>
+    <ul class="unstyled">
+      <li>Unlimited lessons a month</li>
+    </ul>
+    <h4>$5/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
+  </div>
+  <div class="floatRight box">
+    <div class="plan featured-plan"><h3>Gold</h3></div>
+    <ul class="unstyled">
+      <li>20 lessons a month</li>
+    </ul>
+    <h4>$20/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
+  </div>
+  <div class="floatRight box">
+    <div class="plan"><h3>Silver</h3></div>
+    <ul class="unstyled">
+      <li>5 lessons a month</li>
+    </ul>
+    <h4>$0/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
+  </div>
+</div>
